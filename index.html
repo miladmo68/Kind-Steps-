@@ -4,128 +4,187 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kind Steps ABA</title>
-    <link href="templatemo-personal-style.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="templatemo-personal-style.css" />
   </head>
+
   <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-      <div class="nav-container">
-        <!-- <div class="logo">Kind Steps ABA</div> -->
-        <div class="logo">
+    <!-- ===== NAVBAR WRAPPER ===== -->
+    <header class="nav-wrapper">
+      <nav class="navbar" id="navbar">
+        <!-- Left / Brand -->
+        <div class="nav-left">
+          <a href="#home" class="brand">
+            <img
+              src="images/logo.png"
+              alt="Kind Steps ABA Logo"
+              class="brand-logo"
+            />
+            <span class="brand-text">Kind Steps ABA</span>
+          </a>
+
+          <!-- Desktop links -->
+          <ul class="nav-links">
+            <li>
+              <a href="#home"><span class="label">Home</span></a>
+            </li>
+            <li>
+              <a href="#about"><span class="label">About</span></a>
+            </li>
+            <li>
+              <a href="#services"><span class="label">Services</span></a>
+            </li>
+            <li>
+              <a href="#contact"><span class="label">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right / CTA + Mobile toggle -->
+        <div class="nav-cta">
+          <a href="#contact" class="cta-pill">
+            <span class="dot"></span>
+            <span>Free Consultation</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="mobile-toggle"
+          id="mobileMenuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <div class="mobile-toggle-bars">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ===== MOBILE OVERLAY + DRAWER ===== -->
+    <div class="overlay-blur" id="overlayBlur"></div>
+
+    <aside
+      class="mobile-drawer"
+      id="mobileDrawer"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <div class="mobile-drawer-header">
+        <div class="mobile-brand">
           <img
             src="images/logo.png"
             alt="Kind Steps ABA Logo"
-            class="logo-img"
+            class="mobile-brand-logo"
           />
-          <span>Kind Steps ABA</span>
+          <div class="mobile-brand-text">Kind Steps ABA</div>
         </div>
 
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="mobile-menu-toggle" id="mobileMenuToggle">
-          <div class="hamburger"></div>
-          <div class="hamburger"></div>
-          <div class="hamburger"></div>
-        </div>
+        <button
+          class="mobile-close-btn"
+          id="mobileCloseBtn"
+          aria-label="Close menu"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
       <ul class="mobile-nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#home" data-mobile-link>
+            <span class="label">Home</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#about" data-mobile-link>
+            <span class="label">About</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#services" data-mobile-link>
+            <span class="label">Services</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" data-mobile-link>
+            <span class="label">Contact</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
       </ul>
-    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-        <div class="shape shape-6"></div>
+      <div class="mobile-contact-card">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <b>Serving</b><br />
+            Ontario, Canada
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">📧</div>
+          <div>
+            <b>Email</b><br />
+            info@kindsteps.ca
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">📱</div>
+          <div>
+            <b>Phone</b><br />
+            (647) 673-4401
+          </div>
+        </div>
       </div>
+    </aside>
 
-      <div class="hero-content">
-        <div class="hero-subtitle">Compassion • Evidence • Progress</div>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Compassion • Evidence • Progress</div>
 
-        <h1>
-          Supporting Neurodiverse Children, Teens & Young Adults Across Ontario
+        <h1 class="hero-title">
+          Supporting Neurodiverse Children, Teens &amp; Young Adults Across
+          Ontario
         </h1>
 
-        <p class="subtitle">
+        <p class="hero-desc">
           Individualized ABA support for communication, behaviour, independence,
           and confidence — built around your child, your family, and your goals.
         </p>
 
-        <a href="#contact" class="cta-button">Book a Free Consultation</a>
-        <!-- 
-        <div class="hero-tags">
-          <span class="hero-tag">BCBA Supervision</span>
-          <span class="hero-tag">Parent Coaching</span>
-          <span class="hero-tag">Home & School Support</span>
-        </div> -->
+        <a href="#contact" class="hero-cta">Book a Free Consultation</a>
       </div>
+
       <div
         class="scroll-indicator"
-        onclick="document.getElementById('about').scrollIntoView()"
+        id="scrollIndicator"
+        aria-label="Scroll to About"
       ></div>
     </section>
 
-    <!-- About Section -->
-    <!-- <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title fade-in">About Me</h2>
-        <div class="about-content">
-          <div class="about-image slide-in-left"></div>
-          <div class="about-text slide-in-right">
-            <h3>Passionate about creating meaningful digital experiences</h3>
-            <p>
-              With over 5 years of experience in digital design, I specialize in
-              creating user-centered solutions that bridge the gap between
-              functionality and aesthetics. My approach combines strategic
-              thinking with creative execution to deliver impactful results.
-            </p>
-            <p>
-              I believe that great design is not just about how it looks, but
-              how it works and how it makes people feel. Every project is an
-              opportunity to solve problems and create connections that matter.
-            </p>
-            <p>
-              When I'm not designing, you'll find me exploring new technologies,
-              sketching ideas, or seeking inspiration in nature and
-              architecture.
-            </p>
-            <div class="skills">
-              <span class="skill-tag">UI/UX Design</span>
-              <span class="skill-tag">Web Development</span>
-              <span class="skill-tag">Brand Identity</span>
-              <span class="skill-tag">Motion Graphics</span>
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">Design Systems</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="about">
       <div class="container">
         <h2 class="section-title fade-in">About Me</h2>
-        <div class="about-content">
-          <div class="about-text slide-in-left">
+
+        <div class="about-grid">
+          <div class="about-col slide-in-left">
             <h3>Hello, and welcome!</h3>
             <p>
               My name is Soheil Hajizadeh, and I'm a Behaviour Analyst dedicated
@@ -142,9 +201,9 @@
               strengths, and goals of the people I work with.
             </p>
           </div>
-          <div class="about-text slide-in-right">
-            <h3>My Approach</h3>
 
+          <div class="about-col slide-in-right">
+            <h3>My Approach</h3>
             <p>
               Whether it's helping a young child build foundational
               communication skills, supporting a teen with social development,
@@ -164,390 +223,257 @@
               rooted in both compassion and evidence, I would be honoured to
               work with you.
             </p>
-            <!-- <div class="skills">
-              <span class="skill-tag">UI/UX Design</span>
-              <span class="skill-tag">Web Development</span>
-              <span class="skill-tag">Brand Identity</span>
-              <span class="skill-tag">Motion Graphics</span>
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">Design Systems</span>
-            </div> -->
           </div>
         </div>
       </div>
     </section>
-    <!-- Services Section -->
 
-    <section id="services" class="portfolio">
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services">
       <div class="container">
         <h2 class="section-title fade-in">Our Services</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <div class="icon-badge">🧩</div>
-            <div class="portfolio-content">
-              <h4>Individual ABA Therapy</h4>
-              <p>
-                Personalized one-on-one sessions targeting skill development
-                based on each client’s unique needs — including communication,
-                daily living, social interaction, and self-regulation.
-              </p>
-            </div>
+
+        <div class="services-grid portfolio-grid">
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🧩</div>
+            <h4>Individual ABA Therapy</h4>
+            <p>
+              Personalized one-on-one sessions targeting skill development based
+              on each client’s unique needs — including communication, daily
+              living, social interaction, and self-regulation.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">👨‍👩‍👧</div>
-            <div class="portfolio-content">
-              <h4>Parent Coaching & Training</h4>
-              <p>
-                Ongoing support and guidance for parents and caregivers to apply
-                evidence-based strategies at home to manage behaviours and
-                support learning.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">👨‍👩‍👧</div>
+            <h4>Parent Coaching &amp; Training</h4>
+            <p>
+              Ongoing support and guidance for parents and caregivers to apply
+              evidence-based strategies at home to manage behaviours and support
+              learning.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🏫</div>
-            <div class="portfolio-content">
-              <h4>School Collaboration & Consultation</h4>
-              <p>
-                Collaboration with school staff to promote inclusion, develop
-                behaviour support plans, and adapt classroom strategies for
-                neurodiverse learners.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🏫</div>
+            <h4>School Collaboration &amp; Consultation</h4>
+            <p>
+              Collaboration with school staff to promote inclusion, develop
+              behaviour support plans, and adapt classroom strategies for
+              neurodiverse learners.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🧠</div>
-            <div class="portfolio-content">
-              <h4>Social Skills Training</h4>
-              <p>
-                Small group or individual sessions designed to enhance social
-                communication, conversation, friendship, and play skills.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🧠</div>
+            <h4>Social Skills Training</h4>
+            <p>
+              Small group or individual sessions designed to enhance social
+              communication, conversation, friendship, and play skills.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🧼</div>
-            <div class="portfolio-content">
-              <h4>Daily Living Skills Training</h4>
-              <p>
-                Support with routines such as toileting, dressing, hygiene,
-                cooking, and other self-care skills that promote independence.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🧼</div>
+            <h4>Daily Living Skills Training</h4>
+            <p>
+              Support with routines such as toileting, dressing, hygiene,
+              cooking, and other self-care skills that promote independence.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🔄</div>
-            <div class="portfolio-content">
-              <h4>Behaviour Reduction & Replacement Strategies</h4>
-              <p>
-                Functional assessment and planning to reduce challenging
-                behaviours by teaching positive, practical alternatives and
-                enhancing overall quality of life.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🔄</div>
+            <h4>Behaviour Reduction &amp; Replacement Strategies</h4>
+            <p>
+              Functional assessment and planning to reduce challenging
+              behaviours by teaching positive, practical alternatives and
+              enhancing overall quality of life.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🗣️</div>
-            <div class="portfolio-content">
-              <h4>Communication Skills Development</h4>
-              <p>
-                Support for both verbal and non-verbal learners through
-                techniques such as Natural Environment Teaching (NET), Verbal
-                Behaviour (VB), and PECS.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🗣️</div>
+            <h4>Communication Skills Development</h4>
+            <p>
+              Support for both verbal and non-verbal learners through techniques
+              such as Natural Environment Teaching (NET), Verbal Behaviour (VB),
+              and PECS.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🎯</div>
-            <div class="portfolio-content">
-              <h4>Assessment & Goal Planning</h4>
-              <p>
-                Comprehensive assessment using tools like ABLLS-R, VB-MAPP, or
-                PEAK to evaluate current skills and set meaningful, data-driven
-                goals.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🎯</div>
+            <h4>Assessment &amp; Goal Planning</h4>
+            <p>
+              Comprehensive assessment using tools like ABLLS-R, VB-MAPP, or
+              PEAK to evaluate current skills and set meaningful, data-driven
+              goals.
+            </p>
           </div>
 
-          <div class="portfolio-item">
-            <div class="icon-badge">🧾</div>
-            <div class="portfolio-content">
-              <h4>Data Collection & Progress Monitoring</h4>
-              <p>
-                Continuous data tracking and clear visual progress reports to
-                ensure transparency and measurable outcomes for every client.
-              </p>
-            </div>
+          <div class="service-card portfolio-item">
+            <div class="service-icon-badge">🧾</div>
+            <h4>Data Collection &amp; Progress Monitoring</h4>
+            <p>
+              Continuous data tracking and clear visual progress reports to
+              ensure transparency and measurable outcomes for every client.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <!-- <section id="contact" class="contact">
-      <div class="contact-floating-shapes">
-        <div class="contact-shape contact-shape-1"></div>
-        <div class="contact-shape contact-shape-2"></div>
-        <div class="contact-shape contact-shape-3"></div>
-        <div class="contact-shape contact-shape-4"></div>
-        <div class="contact-shape contact-shape-5"></div>
-        <div class="contact-shape contact-shape-6"></div>
-      </div>
-      <div class="container">
-        <div class="contact-content">
-          <h2 class="section-title fade-in">Let's Work Together</h2>
-          <p class="fade-in">
-            Ready to take the first step toward positive change? I'm here to
-            help you and your family achieve your goals. Contact me today to
-            schedule a consultation or learn more about my services.
-          </p>
-          <form class="contact-form fade-in">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your full name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+      <div class="container contact-inner">
+        <h2 class="section-title fade-in">Let's Work Together</h2>
+
+        <p class="contact-lead fade-in">
+          Ready to take the first step toward positive change? I'm here to help
+          you and your family achieve your goals. Contact me today to schedule a
+          consultation or learn more about my services.
+        </p>
+
+        <div class="contact-info-bar fade-in">
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <div class="contact-label">Serving</div>
+              <div class="contact-value">Ontario, Canada</div>
             </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">info@kindsteps.ca</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-text">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">(647) 673-4401</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form fade-in">
+          <h3 class="form-headline">Free Consultation</h3>
+
+          <div class="form-row">
             <div class="form-group">
-              <label for="subject">Subject</label>
+              <label for="name">Name</label>
               <input
+                id="name"
+                name="name"
                 type="text"
-                id="subject"
-                name="subject"
-                placeholder="What's this about?"
+                placeholder="Your full name"
                 required
               />
             </div>
+
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Tell me about your project..."
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="your.email@example.com"
                 required
-              ></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section> -->
-    <section id="contact" class="contact">
-      <div class="contact-floating-shapes">
-        <div class="contact-shape contact-shape-1"></div>
-        <div class="contact-shape contact-shape-2"></div>
-        <div class="contact-shape contact-shape-3"></div>
-        <div class="contact-shape contact-shape-4"></div>
-        <div class="contact-shape contact-shape-5"></div>
-        <div class="contact-shape contact-shape-6"></div>
-      </div>
-      <div class="container">
-        <div class="contact-content">
-          <h2 class="section-title fade-in">Let's Work Together</h2>
-          <p class="fade-in">
-            Ready to take the first step toward positive change? I'm here to
-            help you and your family achieve your goals. Contact me today to
-            schedule a consultation or learn more about my services.
-          </p>
-          <!-- quick contact info row -->
-          <div class="contact-info-bar fade-in">
-            <div class="contact-info-item">
-              <div class="contact-icon">📍</div>
-              <div class="contact-text">
-                <div class="contact-label">Serving</div>
-                <div class="contact-value">Ontario, Canada</div>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon">📧</div>
-              <div class="contact-text">
-                <div class="contact-label">Email</div>
-                <div class="contact-value">info@kindsteps.ca</div>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon">📱</div>
-              <div class="contact-text">
-                <div class="contact-label">Phone</div>
-                <div class="contact-value">(647) 673-4401</div>
-              </div>
+              />
             </div>
           </div>
-          <form class="contact-form fade-in">
-            <!-- Row 1: Name + Email -->
-            <h3 class="section-title fade-in">Free Consultation</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your full name"
-                  required
-                />
-              </div>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Row 2: Phone + Service of Interest -->
-            <div class="form-row">
-              <!-- Phone -->
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Your phone number"
-                  required
-                />
-              </div>
-
-              <!-- Service of Interest (dropdown) -->
-              <div class="form-group">
-                <label for="service">Service of Interest</label>
-                <select id="service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option value="Individual ABA Therapy">
-                    Individual ABA Therapy
-                  </option>
-                  <option value="Parent Coaching & Training">
-                    Parent Coaching & Training
-                  </option>
-                  <option value="School Collaboration & Consultation">
-                    School Collaboration & Consultation
-                  </option>
-                  <option value="Social Skills Training">
-                    Social Skills Training
-                  </option>
-                  <option value="Daily Living Skills Training">
-                    Daily Living Skills Training
-                  </option>
-                  <option value="Behaviour Reduction & Replacement">
-                    Behaviour Reduction &amp; Replacement
-                  </option>
-                  <option value="Communication Skills Development">
-                    Communication Skills Development
-                  </option>
-                  <option value="Assessment & Goal Planning">
-                    Assessment &amp; Goal Planning
-                  </option>
-                  <option value="Data Collection & Progress Monitoring">
-                    Data Collection &amp; Progress Monitoring
-                  </option>
-                  <option value="General Consultation">
-                    General Consultation
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Message -->
+          <div class="form-row">
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Tell me about your child / goals / concerns..."
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Your phone number"
                 required
-              ></textarea>
+              />
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-        </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="Individual ABA Therapy">
+                  Individual ABA Therapy
+                </option>
+                <option value="Parent Coaching & Training">
+                  Parent Coaching &amp; Training
+                </option>
+                <option value="School Collaboration & Consultation">
+                  School Collaboration &amp; Consultation
+                </option>
+                <option value="Social Skills Training">
+                  Social Skills Training
+                </option>
+                <option value="Daily Living Skills Training">
+                  Daily Living Skills Training
+                </option>
+                <option value="Behaviour Reduction & Replacement">
+                  Behaviour Reduction &amp; Replacement
+                </option>
+                <option value="Communication Skills Development">
+                  Communication Skills Development
+                </option>
+                <option value="Assessment & Goal Planning">
+                  Assessment &amp; Goal Planning
+                </option>
+                <option value="Data Collection & Progress Monitoring">
+                  Data Collection &amp; Progress Monitoring
+                </option>
+                <option value="General Consultation">
+                  General Consultation
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell me about your child / goals / concerns..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-left">
-            <p>&copy; 2025. All rights reserved.</p>
-          </div>
-          <div class="footer-right">
-            <!-- <a
-              href="https://www.instagram.com/milink.ca"
-              target="_blank"
-              rel="noopener"
-              class="social-icon"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
+      <div class="container footer-content">
+        <div class="footer-left">
+          <p>&copy; 2025. All rights reserved.</p>
+        </div>
 
-            <a
-              href="https://wa.me/14376003139"
-              target="_blank"
-              rel="noopener"
-              class="social-icon"
-              aria-label="WhatsApp"
-            >
-              <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <a
-              href="https://www.facebook.com/milink.ca"
-              target="_blank"
-              rel="noopener"
-              class="social-icon"
-              aria-label="Facebook"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a> -->
-
-            <a
-              href="https://milink.ca"
-              target="_blank"
-              rel="noopener nofollow"
-              class="provider-link"
-            >
-              Provided by milink.ca
-            </a>
-          </div>
+        <div class="footer-right">
+          <a
+            href="https://milink.ca"
+            target="_blank"
+            rel="noopener nofollow"
+            class="provider-link"
+            >Provided by milink.ca</a
+          >
         </div>
       </div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script src="templatemo-personal-javascripts.js"></script>
   </body>
 </html>
