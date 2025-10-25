@@ -1,6 +1,4 @@
-/* =========================================================
-   GLOBAL ELEMENTS
-========================================================= */
+// grab elements
 const navbar = document.getElementById("navbar");
 const mobileToggle = document.getElementById("mobileMenuToggle");
 const mobileDrawer = document.getElementById("mobileDrawer");
@@ -9,19 +7,17 @@ const mobileCloseBtn = document.getElementById("mobileCloseBtn");
 const mobileLinks = document.querySelectorAll("[data-mobile-link]");
 const scrollIndicator = document.getElementById("scrollIndicator");
 const aboutSection = document.getElementById("about");
+const progressBar = document.getElementById("scrollProgress");
+const heroParallaxOrbs = document.querySelectorAll("[data-orb]");
+const serviceTabs = document.querySelectorAll("[data-segment]");
+const serviceCards = document.querySelectorAll(".service-card");
+const contactForm = document.getElementById("contactForm");
+const formToast = document.getElementById("formToast");
+const toastClose = document.getElementById("toastClose");
 
-/* If present in HTML (premium layout additions) */
-const progressBar = document.getElementById("scrollProgressBar"); // thin bar under navbar
-const heroParallaxOrbs = document.querySelectorAll(".hero-orb"); // glowing parallax blobs
-const serviceTabs = document.querySelectorAll("[data-service-tab]"); // age tabs
-const serviceCards = document.querySelectorAll("[data-service-age]"); // cards tagged by age
-const contactForm = document.querySelector(".contact-form"); // consultation form
-let toastEl = null; // we'll create toast on demand
-
-/* =========================================================
-   MOBILE MENU OPEN/CLOSE
-========================================================= */
-
+// ==========================
+// MOBILE MENU OPEN/CLOSE
+// ==========================
 function openMobileMenu() {
   if (!mobileDrawer || !mobileToggle || !overlayBlur) return;
 
@@ -48,7 +44,7 @@ function closeMobileMenu() {
   mobileToggle.setAttribute("aria-expanded", "false");
 }
 
-/* toggle button */
+// toggle burger
 if (mobileToggle) {
   mobileToggle.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -60,24 +56,24 @@ if (mobileToggle) {
   });
 }
 
-/* close X button */
+// close with X
 if (mobileCloseBtn) {
   mobileCloseBtn.addEventListener("click", closeMobileMenu);
 }
 
-/* overlay click closes */
+// close when tap overlay
 if (overlayBlur) {
   overlayBlur.addEventListener("click", closeMobileMenu);
 }
 
-/* clicking nav links in drawer closes menu */
+// close when tap any link inside drawer
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
     closeMobileMenu();
   });
 });
 
-/* click outside drawer closes it */
+// click outside drawer closes drawer
 document.addEventListener("click", (e) => {
   if (!mobileDrawer || !mobileToggle) return;
   if (!mobileDrawer.classList.contains("active")) return;
@@ -90,7 +86,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-/* esc key closes drawer */
+// ESC key closes drawer
 document.addEventListener("keydown", (e) => {
   if (
     e.key === "Escape" &&
@@ -101,10 +97,9 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-/* =========================================================
-   NAVBAR SCROLL STATE + PROGRESS BAR
-========================================================= */
-
+// ==========================
+// NAVBAR SCROLL STATE + PROGRESS
+// ==========================
 function updateNavbarState() {
   if (!navbar) return;
   if (window.scrollY > 50) {
@@ -125,7 +120,8 @@ function updateScrollProgress() {
     progress = (scrollTop / docHeight) * 100;
   }
 
-  progressBar.style.transform = `scaleX(${progress / 100})`;
+  // progress bar in HTML is a full-width div, so we animate width
+  progressBar.style.width = progress + "%";
 }
 
 window.addEventListener("scroll", () => {
@@ -136,10 +132,9 @@ window.addEventListener("scroll", () => {
 updateNavbarState();
 updateScrollProgress();
 
-/* =========================================================
-   SMOOTH SCROLL FOR ALL # LINKS
-========================================================= */
-
+// ==========================
+// SMOOTH SCROLL FOR INTERNAL # LINKS
+// ==========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const targetId = this.getAttribute("href");
@@ -148,7 +143,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     e.preventDefault();
 
-    // offset so section title نیفته زیر ناوبار
+    // offset so section title doesn't hide under navbar
     const navOffset = navbar ? navbar.offsetHeight + 24 : 24;
     const elementPos = targetEl.getBoundingClientRect().top + window.scrollY;
     const scrollTo = elementPos - navOffset;
@@ -160,7 +155,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/* special scroll indicator in hero → scroll to "about" */
+// hero scroll indicator → scroll to About
 if (scrollIndicator && aboutSection) {
   scrollIndicator.addEventListener("click", () => {
     const navOffset = navbar ? navbar.offsetHeight + 24 : 24;
@@ -175,37 +170,28 @@ if (scrollIndicator && aboutSection) {
   });
 }
 
-/* =========================================================
-   HERO PARALLAX ORBS
-   (گلوب‌های محو که با موس خیلی آروم حرکت می‌کنن)
-========================================================= */
-
+// ==========================
+// HERO PARALLAX ORBS
+// ==========================
 window.addEventListener("pointermove", (e) => {
   if (!heroParallaxOrbs || heroParallaxOrbs.length === 0) return;
 
-  // نسبت موقعیت موس نسبت به وسط ویوپورت
-  const xRatio = (e.clientX / window.innerWidth - 0.5) * 2; // -1 تا 1
+  // -1 to 1
+  const xRatio = (e.clientX / window.innerWidth - 0.5) * 2;
   const yRatio = (e.clientY / window.innerHeight - 0.5) * 2;
 
   heroParallaxOrbs.forEach((orb, index) => {
-    // هر orb شدت متفاوت
     const strength = 10 + index * 5; // px
     const translateX = xRatio * strength;
     const translateY = yRatio * strength;
 
-    orb.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(1)`;
+    orb.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
   });
 });
 
-/* =========================================================
-   INTERSECTION OBSERVER:
-   - fade-in
-   - slide-in-left
-   - slide-in-right
-   - plus stagger for service cards
-========================================================= */
-
-/* generic reveal observer */
+// ==========================
+// REVEAL ANIMATIONS ON SCROLL
+// ==========================
 const animateObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -220,12 +206,12 @@ const animateObserver = new IntersectionObserver(
   }
 );
 
-/* attach to fade/slide elements */
+// fade / slide elements
 document
   .querySelectorAll(".fade-in, .slide-in-left, .slide-in-right")
   .forEach((el) => animateObserver.observe(el));
 
-/* staggered reveal for service cards grid */
+// stagger service cards
 const servicesGrid = document.querySelector(".services-grid");
 if (servicesGrid) {
   const cards = servicesGrid.querySelectorAll(".service-card");
@@ -247,31 +233,25 @@ if (servicesGrid) {
   staggerObserver.observe(servicesGrid);
 }
 
-/* =========================================================
-   SERVICE AGE FILTER TABS
-   - دکمه‌ها مثل data-service-tab="teen" یا "early"
-   - کارت‌ها مثل data-service-age="teen early"
-========================================================= */
-
+// ==========================
+// SERVICE SEGMENT FILTER (Early / School / Teens)
+// ==========================
 function clearActiveServiceTabs() {
-  serviceTabs.forEach((tabBtn) => {
-    tabBtn.classList.remove("active");
-  });
+  serviceTabs.forEach((btn) => btn.classList.remove("active"));
 }
 
-function filterServicesByAge(ageKey) {
-  // ageKey ممکنه باشه "all" یا "early" یا "school" یا "teen"
+function filterServicesBySegment(segmentKey) {
+  // segmentKey matches values like "early", "school", "teens"
   serviceCards.forEach((card) => {
-    const agesForThisCard = card
-      .getAttribute("data-service-age")
+    const groups = card
+      .getAttribute("data-groups")
       .split(" ")
-      .map((x) => x.trim());
+      .map((g) => g.trim());
 
-    const shouldShow = ageKey === "all" || agesForThisCard.includes(ageKey);
+    const shouldShow = groups.includes(segmentKey);
 
     if (shouldShow) {
       card.style.display = "";
-      // انیمیشن ورود دوباره
       requestAnimationFrame(() => {
         card.classList.add("animate");
       });
@@ -281,72 +261,52 @@ function filterServicesByAge(ageKey) {
   });
 }
 
-serviceTabs.forEach((tabBtn) => {
-  tabBtn.addEventListener("click", () => {
-    const key = tabBtn.getAttribute("data-service-tab") || "all";
+// hook up filter buttons
+serviceTabs.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const seg = btn.getAttribute("data-segment");
 
     clearActiveServiceTabs();
-    tabBtn.classList.add("active");
-    filterServicesByAge(key);
+    btn.classList.add("active");
+
+    if (seg) {
+      filterServicesBySegment(seg);
+    }
   });
 });
 
-/* نکته:
-   ما بعد از لود صفحه می‌تونیم یک تب پیش‌فرض رو فعال کنیم.
-   اینجا می‌گردیم دنبال تب ".active" اولیه. اگه نبود، می‌ذاریم "all".
-*/
+// init default filter based on .active
 (function initServiceFilterOnLoad() {
   if (serviceTabs.length === 0 || serviceCards.length === 0) return;
 
-  let defaultTab = document.querySelector("[data-service-tab].active");
-  if (!defaultTab) {
-    defaultTab = document.querySelector('[data-service-tab="all"]');
-    if (defaultTab) defaultTab.classList.add("active");
+  let defaultBtn = document.querySelector("[data-segment].active");
+  if (!defaultBtn) {
+    // no active tab? show all cards
+    serviceCards.forEach((card) => {
+      card.style.display = "";
+    });
+    serviceTabs.forEach((btn) => btn.classList.remove("active"));
+    return;
   }
 
-  if (defaultTab) {
-    const key = defaultTab.getAttribute("data-service-tab") || "all";
-    filterServicesByAge(key);
+  const seg = defaultBtn.getAttribute("data-segment");
+  if (seg) {
+    filterServicesBySegment(seg);
   }
 })();
 
-/* =========================================================
-   CONTACT FORM UX
-   - دکمه Submit میره تو حالت "Sending..."
-   - بعدش پیام موفقیت
-   - Toast پایین صفحه
-========================================================= */
+// ==========================
+// CONTACT FORM / TOAST
+// ==========================
+function openFormToast() {
+  if (!formToast) return;
+  formToast.classList.add("show");
+}
 
-function showToast(message = "Thank you! I'll reach out soon.") {
-  // اگه قبلاً توست داریم، اول پاکش کنیم
-  if (toastEl) {
-    toastEl.remove();
-    toastEl = null;
-  }
-
-  toastEl = document.createElement("div");
-  toastEl.className = "toast-success";
-  toastEl.setAttribute("role", "status");
-  toastEl.textContent = message;
-
-  document.body.appendChild(toastEl);
-
-  // کلاس برای fade-in
-  requestAnimationFrame(() => {
-    toastEl.classList.add("visible");
+if (toastClose && formToast) {
+  toastClose.addEventListener("click", () => {
+    formToast.classList.remove("show");
   });
-
-  // بعد چند ثانیه محو بشه
-  setTimeout(() => {
-    if (!toastEl) return;
-    toastEl.classList.remove("visible");
-    setTimeout(() => {
-      if (toastEl) {
-        toastEl.remove();
-        toastEl = null;
-      }
-    }, 400);
-  }, 4000);
 }
 
 if (contactForm) {
@@ -358,35 +318,26 @@ if (contactForm) {
 
     const originalText = submitBtn.textContent;
 
-    // حالت لودینگ
+    // loading state
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
-    submitBtn.classList.add("is-loading");
 
-    // fake async
+    // fake async (no backend yet)
     setTimeout(() => {
-      // حالت موفق
+      // success state
       submitBtn.textContent = "Message Sent! ✓";
-      submitBtn.classList.remove("is-loading");
       submitBtn.classList.add("is-success");
 
-      // یه افکت کوچولو
-      submitBtn.style.transform = "scale(1.05)";
-      setTimeout(() => {
-        submitBtn.style.transform = "scale(1)";
-      }, 200);
+      // show toast bubble in the form bottom
+      openFormToast();
 
-      // toast
-      showToast("Thank you! Your message has been sent.");
-
-      // برگردوندن به حالت اولیه
+      // reset
       setTimeout(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         submitBtn.classList.remove("is-success");
-        submitBtn.style.transform = "";
         contactForm.reset();
-      }, 3000);
-    }, 2000);
+      }, 2500);
+    }, 1500);
   });
 }

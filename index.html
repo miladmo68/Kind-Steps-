@@ -60,131 +60,125 @@
           </a>
         </div>
 
-        <!-- mobile action + burger -->
+        <!-- mobile side (burger button ONLY for mobile screens) -->
         <div class="nav-mobile-side">
-          <a href="#contact" class="mini-cta-mobile">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span>Book</span>
-          </a>
-
           <button
-            class="mobile-toggle"
+            class="mobile-toggle bubble-menu-btn"
             id="mobileMenuToggle"
             aria-label="Open menu"
             aria-expanded="false"
           >
-            <div class="mobile-toggle-bars">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </div>
+            <span class="bubble-line"></span>
+            <span class="bubble-line"></span>
+            <span class="bubble-line"></span>
           </button>
         </div>
 
         <!-- scroll progress bar -->
         <div class="scroll-progress" id="scrollProgress"></div>
       </nav>
-    </header>
 
-    <!-- ===========================
-         MOBILE OVERLAY / DRAWER
-    ============================ -->
-    <div class="overlay-blur" id="overlayBlur"></div>
+      <!-- overlay background behind drawer -->
+      <div class="overlay-blur" id="overlayBlur"></div>
 
-    <aside
-      class="mobile-drawer"
-      id="mobileDrawer"
-      aria-hidden="true"
-      tabindex="-1"
-    >
-      <div class="mobile-drawer-header">
-        <div class="mobile-profile-block">
-          <div class="mobile-profile-left">
-            <img
-              src="images/logo.png"
-              alt="Kind Steps ABA Logo"
-              class="mobile-brand-logo"
-            />
-          </div>
-          <div class="mobile-profile-right">
-            <div class="mobile-profile-name">
-              Soheil Hajizadeh
-              <span class="cert-chip"
-                ><i class="fa-solid fa-shield-heart"></i> Behaviour
-                Analyst</span
-              >
+      <!-- ===========================
+           MOBILE OVERLAY / DRAWER
+      ============================ -->
+      <aside
+        class="mobile-drawer"
+        id="mobileDrawer"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="mobile-drawer-header">
+          <div class="mobile-profile-block">
+            <div class="mobile-profile-left">
+              <img
+                src="images/logo.png"
+                alt="Kind Steps ABA Logo"
+                class="mobile-brand-logo"
+              />
             </div>
-            <div class="mobile-profile-sub">ABA Specialist • Ontario</div>
+            <div class="mobile-profile-right">
+              <div class="mobile-profile-name">
+                Soheil Hajizadeh
+                <span class="cert-chip"
+                  ><i class="fa-solid fa-shield-heart"></i> Behaviour
+                  Analyst</span
+                >
+              </div>
+              <div class="mobile-profile-sub">ABA Specialist • Ontario</div>
+            </div>
           </div>
+
+          <button
+            class="mobile-close-btn"
+            id="mobileCloseBtn"
+            aria-label="Close menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <button
-          class="mobile-close-btn"
-          id="mobileCloseBtn"
-          aria-label="Close menu"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="#home" data-mobile-link>
+              <span class="label">Home</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#about" data-mobile-link>
+              <span class="label">About</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#services" data-mobile-link>
+              <span class="label">Services</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" data-mobile-link>
+              <span class="label">Contact</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
 
-      <ul class="mobile-nav-links">
-        <li>
-          <a href="#home" data-mobile-link>
-            <span class="label">Home</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#about" data-mobile-link>
-            <span class="label">About</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#services" data-mobile-link>
-            <span class="label">Services</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#contact" data-mobile-link>
-            <span class="label">Contact</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
-        </li>
-      </ul>
-
-      <div class="mobile-contact-card">
-        <div class="contact-row">
-          <div class="contact-icon">📍</div>
-          <div>
-            <b>Serving</b><br />
-            Ontario, Canada
+        <div class="mobile-contact-card">
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <b>Serving</b><br />
+              Ontario, Canada
+            </div>
           </div>
-        </div>
 
-        <div class="contact-row">
-          <div class="contact-icon">📧</div>
-          <div>
-            <b>Email</b><br />
-            info@kindsteps.ca
+          <div class="contact-row">
+            <div class="contact-icon">📧</div>
+            <div>
+              <b>Email</b><br />
+              info@kindsteps.ca
+            </div>
           </div>
-        </div>
 
-        <div class="contact-row">
-          <div class="contact-icon">📱</div>
-          <div>
-            <b>Phone</b><br />
-            (647) 673-4401
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <div>
+              <b>Phone</b><br />
+              (647) 673-4401
+            </div>
           </div>
-        </div>
 
-        <a href="#contact" class="drawer-big-cta">
-          <i class="fa-solid fa-calendar-check"></i>
-          <span>Request a Free Consultation</span>
-        </a>
-      </div>
-    </aside>
+          <a href="#contact" class="drawer-big-cta" data-mobile-link>
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Request a Free Consultation</span>
+          </a>
+        </div>
+      </aside>
+    </header>
 
     <!-- ===========================
          HERO
@@ -209,7 +203,7 @@
         </p>
 
         <div class="hero-cta-row">
-          <a href="#contact" class="hero-cta hero-cta-primary">
+          <a href="#contact" class="hero-cta hero-cta-primary" data-mobile-link>
             Book a Free Consultation
           </a>
           <a href="#faq" class="hero-cta hero-cta-ghost"> What is ABA? </a>
@@ -251,7 +245,7 @@
           <aside class="about-profile-card slide-in-left">
             <div class="profile-card-inner">
               <div class="profile-avatar">
-                <!-- اگر عکس واقعی داری، بذار اینجا -->
+                <!-- avatar placeholder -->
                 <div class="avatar-fake">
                   <i class="fa-solid fa-user"></i>
                 </div>
@@ -533,7 +527,7 @@
                 point — no pressure, no commitment.
               </div>
             </div>
-            <a href="#contact" class="callout-btn">
+            <a href="#contact" class="callout-btn" data-mobile-link>
               Get a Personalized Plan
               <i class="fa-solid fa-arrow-right-long"></i>
             </a>
@@ -542,60 +536,6 @@
       </div>
     </section>
 
-    <!-- ===========================
-         FAQ / ABA EXPLAIN (anchor for "What is ABA?")
-    ============================ -->
-    <!-- <section id="faq" class="faq-block">
-      <div class="container">
-        <div class="faq-card fade-in">
-          <div class="faq-card-head">
-            <div class="faq-eyebrow">What is ABA?</div>
-            <h2 class="faq-title">
-              Applied Behaviour Analysis (ABA) is an evidence-based approach to
-              teaching meaningful, real-life skills.
-            </h2>
-          </div>
-          <div class="faq-body">
-            <div class="faq-col">
-              <p>
-                ABA focuses on understanding why behaviours happen, and then
-                building strategies that actually work in the real world —
-                communication, independence, self-regulation, social connection,
-                and more.
-              </p>
-              <p>
-                Good ABA is collaborative, respectful, and person-centered. It
-                should feel supportive, not forceful.
-              </p>
-            </div>
-            <div class="faq-col">
-              <ul class="faq-list">
-                <li>
-                  <span class="dot"></span>
-                  Improves communication and self-advocacy
-                </li>
-                <li>
-                  <span class="dot"></span>
-                  Builds daily living skills and independence
-                </li>
-                <li>
-                  <span class="dot"></span>
-                  Supports emotional &amp; behavioural regulation
-                </li>
-                <li>
-                  <span class="dot"></span>
-                  Helps families feel confident and prepared
-                </li>
-              </ul>
-              <a href="#contact" class="faq-cta">
-                Talk to me about ABA for your child
-                <i class="fa-solid fa-arrow-right-long"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
     <!-- ===========================
          CONTACT
     ============================ -->
@@ -790,11 +730,11 @@
         <div class="footer-col">
           <div class="footer-head">Site</div>
           <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <!-- <li><a href="#faq">What is ABA?</a></li> -->
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" data-mobile-link>Home</a></li>
+            <li><a href="#about" data-mobile-link>About</a></li>
+            <li><a href="#services" data-mobile-link>Services</a></li>
+            <!-- <li><a href="#faq" data-mobile-link>What is ABA?</a></li> -->
+            <li><a href="#contact" data-mobile-link>Contact</a></li>
           </ul>
         </div>
 
