@@ -1842,3 +1842,23 @@ section {
     bottom: 0.5rem;
   }
 }
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* جلو اسکرول چپ/راست */
+  position: relative;
+}
+.nav-wrapper {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1000;
+
+  /* اضافه‌های جدید برای آیفون */
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
