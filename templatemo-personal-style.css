@@ -361,7 +361,7 @@ nav.scrolled {
 }
 
 /* Hero Section */
-.hero {
+/* .hero {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -369,6 +369,37 @@ nav.scrolled {
   background: var(--gradient-elegant);
   position: relative;
   overflow: hidden;
+} */
+/* Hero Section */
+.hero {
+  height: 100vh; /* تمام قد صفحه */
+  padding-top: 200px; /* فقط برای دسکتاپ، تا متن از زیر منو بیاد پایین */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-elegant);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile و Tablet تنظیم padding کمتر */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh; /* بدون calc تا اسکرول اضافی نیاد */
+    padding-top: 100px; /* فاصله کمتر در تبلت و موبایل متوسط */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh; /* همچنان بدون calc */
+    padding-top: 80px; /* فاصله کمتر برای موبایل کوچک */
+  }
+
+  /* جلوگیری از اسکرول اضافی ناشی از indicator */
+  .scroll-indicator {
+    bottom: 20px;
+  }
 }
 
 .hero::before {
