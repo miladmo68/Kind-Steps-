@@ -1900,7 +1900,7 @@ body {
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
 }
-@media (max-width: 480px) {
+@media (max-width: 680px) {
   /* کل فوتر فشرده‌تر */
   .footer {
     padding: 1.5rem 0 2rem;
