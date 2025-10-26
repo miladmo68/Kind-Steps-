@@ -1900,177 +1900,184 @@ body {
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
 }
-@media (max-width: 680px) {
-  /* کل فوتر فشرده‌تر */
+@media (max-width: 768px) {
+  /* footer container smaller / tighter */
   .footer {
-    padding: 1.5rem 0 2rem;
+    padding: 1.5rem 0 2rem !important;
   }
 
-  /* گرید اصلی رو تبدیل کن به استک عمودی منظم */
+  /* stack everything vertically, centered */
   .footer-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
   }
 
-  /* هر ستون دیگه ستون نیست، الان فقط یک بلاک توی این استک */
+  /* base style for each block */
   .footer-col {
-    width: 100%;
-    max-width: 320px;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    color: rgba(255, 255, 255, 0.8);
+    width: 100% !important;
+    max-width: 340px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
   }
 
-  /* ---------- BLOCK 1: برند بالا خیلی کوتاه ---------- */
+  /* -------- BLOCK 1: Brand / About / © / milink -------- */
   .footer-col:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 1rem 1rem 0.75rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    padding: 1rem 1rem 0.75rem !important;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4) !important;
   }
 
   .footer-brand-name {
-    font-size: 0.9rem;
-    line-height: 1.2;
-    margin-bottom: 0.25rem;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.25rem !important;
   }
 
   .footer-brand-line {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    max-width: 260px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0.5rem;
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    max-width: 260px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 0.5rem !important;
   }
 
-  /* provider-link رو می‌بریم تو همین کارت بالا و کوچیکش می‌کنیم */
+  .footer-copy {
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-top: 0.5rem !important;
+  }
+
   .provider-link {
     order: 3;
-    margin-top: 0.5rem;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5rem !important;
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none !important;
+    transform: none !important;
   }
   .provider-link:hover {
-    color: #fff;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
-    transform: none;
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6) !important;
   }
 
-  /* کپی‌رایت رو کوچیک می‌کنیم که تو همین کارت بمونه */
-  .footer-copy {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.45);
-    margin-top: 0.5rem;
-  }
-
-  /* ---------- BLOCK 2: منو Site به صورت یک ردیف ---------- */
+  /* -------- BLOCK 2: Site links in ONE LINE row -------- */
   .footer-col:nth-child(2) {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 102, 241, 0.4);
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 102, 241, 0.4) !important;
   }
 
-  /* سربرگ "Site" خیلی ریز */
   .footer-col:nth-child(2) .footer-head {
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    text-align: center;
+    font-size: 0.7rem !important;
+    margin-bottom: 0.5rem !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
   }
 
-  /* لینک‌ها کنار هم در یک خط با نقطه یا خط عمودی جدا */
   .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 0.4rem;
-    column-gap: 0.75rem;
-    font-size: 0.8rem;
-    line-height: 1.4;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 0.4rem !important;
+    column-gap: 0.75rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-links li {
-    list-style: none;
-    position: relative;
-    color: rgba(255, 255, 255, 0.7);
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-links a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none !important;
+    color: rgba(255, 255, 255, 0.75) !important;
   }
 
   .footer-links a:hover {
-    color: #fff;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6) !important;
   }
 
-  /* ---------- BLOCK 3: Contact به صورت خط/خط و خیلی کم حجم ---------- */
+  /* -------- BLOCK 3: Contact compressed -------- */
   .footer-col:nth-child(3) {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4);
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4) !important;
   }
 
   .footer-col:nth-child(3) .footer-head {
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    text-align: center;
+    font-size: 0.7rem !important;
+    margin-bottom: 0.5rem !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
   }
 
-  /* contact list: ما می‌کنیمش دو ردیف فلت نه سه بلوک بزرگ */
   .footer-contact {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 0.4rem;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.75);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-align: center !important;
   }
 
   .footer-contact li {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: rgba(255, 255, 255, 0.75);
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    margin: 0 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .footer-contact i {
-    font-size: 0.7rem;
-    line-height: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.7rem !important;
+    line-height: 1rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  /* فاصله بین این کارت‌ها و کل صفحه پایین خیلی کم بمونه */
-  .footer-col:nth-child(1),
-  .footer-col:nth-child(2),
-  .footer-col:nth-child(3) {
-    max-width: 340px;
-    width: 100%;
-  }
-
-  /* فاصله کلی بین کارت‌ها کم بشه */
-  .footer-grid {
-    gap: 0.75rem;
+  /* make headings smaller globally in footer */
+  .footer-head {
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
   }
 }
