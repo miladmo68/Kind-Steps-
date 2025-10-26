@@ -280,24 +280,34 @@ section {
 }
 
 /* bubble-style burger button for mobile */
+/* ====== UPDATED MOBILE BURGER BUTTON STYLE (Purple theme) ====== */
 .bubble-menu-btn {
   width: 56px;
   height: 56px;
   border-radius: var(--radius-full);
 
+  /* شیشه تیره با هاله بنفش/آبی مثل گرادینت سایت */
   background: radial-gradient(
-      circle at 50% 30%,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(0, 0, 0, 0) 60%
+      circle at 0% 0%,
+      rgba(139, 92, 246, 0.28) 0%,
+      /* بنفش روشن */ rgba(0, 0, 0, 0) 60%
     ),
-    #3a404e;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(99, 102, 241, 0.22) 0%,
+      /* ایندگو/آبی بنفشی */ rgba(0, 0, 0, 0) 70%
+    ),
+    rgba(15, 23, 42, 0.8); /* همون حس شیشه تیره کارت‎هات */
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 8px rgba(0, 0, 0, 0.6),
-    0 0 2px rgba(255, 255, 255, 0.2) inset;
+  /* بوردر با تون بنفش-ایندگو نه سبز */
+  border: 2px solid rgba(139, 92, 246, 0.4);
+
+  /* نئون بنفش/آبی شبیه glow کارت‌ها و آیکون‌ها */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 24px rgba(139, 92, 246, 0.55),
+    0 0 48px rgba(99, 102, 241, 0.4);
 
   display: flex;
-  flex-direction: column; /* vertical lines */
+  flex-direction: column; /* سه خط زیر هم */
   align-items: center;
   justify-content: center;
   gap: 6px;
@@ -305,16 +315,35 @@ section {
   padding: 0;
   position: relative;
   cursor: pointer;
+
+  /* حالت گلس مثل بقیه کارت‌های تار روشن */
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
 }
 
-/* white lines inside burger */
+/* خود خط‌های همبرگر */
 .bubble-menu-btn .bubble-line {
   width: 28px;
   height: 3px;
   border-radius: 2px;
   background: #ffffff;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.9), 0 0 10px rgba(139, 92, 246, 0.6),
+    /* glow بنفش */ 0 0 18px rgba(99, 102, 241, 0.5); /* glow آبی-بنفش */
   transition: all 0.25s ease;
+}
+
+/* حالت active برای ضربدر - همونا بمونن */
+.bubble-menu-btn.active {
+  gap: 0;
+}
+.bubble-menu-btn.active .bubble-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.bubble-menu-btn.active .bubble-line:nth-child(2) {
+  opacity: 0;
+}
+.bubble-menu-btn.active .bubble-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* turn into "X" when active (menu open) */
