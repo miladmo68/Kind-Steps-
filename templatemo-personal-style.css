@@ -1900,3 +1900,177 @@ body {
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
 }
+@media (max-width: 480px) {
+  /* کل فوتر فشرده‌تر */
+  .footer {
+    padding: 1.5rem 0 2rem;
+  }
+
+  /* گرید اصلی رو تبدیل کن به استک عمودی منظم */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  /* هر ستون دیگه ستون نیست، الان فقط یک بلاک توی این استک */
+  .footer-col {
+    width: 100%;
+    max-width: 320px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ---------- BLOCK 1: برند بالا خیلی کوتاه ---------- */
+  .footer-col:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 1rem 1rem 0.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4);
+  }
+
+  .footer-brand-name {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-brand-line {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    max-width: 260px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  /* provider-link رو می‌بریم تو همین کارت بالا و کوچیکش می‌کنیم */
+  .provider-link {
+    order: 3;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .provider-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    transform: none;
+  }
+
+  /* کپی‌رایت رو کوچیک می‌کنیم که تو همین کارت بمونه */
+  .footer-copy {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 0.5rem;
+  }
+
+  /* ---------- BLOCK 2: منو Site به صورت یک ردیف ---------- */
+  .footer-col:nth-child(2) {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 102, 241, 0.4);
+  }
+
+  /* سربرگ "Site" خیلی ریز */
+  .footer-col:nth-child(2) .footer-head {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  /* لینک‌ها کنار هم در یک خط با نقطه یا خط عمودی جدا */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.4rem;
+    column-gap: 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .footer-links li {
+    list-style: none;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+  }
+
+  /* ---------- BLOCK 3: Contact به صورت خط/خط و خیلی کم حجم ---------- */
+  .footer-col:nth-child(3) {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.4);
+  }
+
+  .footer-col:nth-child(3) .footer-head {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  /* contact list: ما می‌کنیمش دو ردیف فلت نه سه بلوک بزرگ */
+  .footer-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-contact i {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* فاصله بین این کارت‌ها و کل صفحه پایین خیلی کم بمونه */
+  .footer-col:nth-child(1),
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3) {
+    max-width: 340px;
+    width: 100%;
+  }
+
+  /* فاصله کلی بین کارت‌ها کم بشه */
+  .footer-grid {
+    gap: 0.75rem;
+  }
+}
