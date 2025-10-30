@@ -310,34 +310,43 @@ if (toastClose && formToast) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector(".submit-btn");
     if (!submitBtn) return;
 
     const originalText = submitBtn.textContent;
-
-    // loading state
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
-    // fake async (no backend yet)
-    setTimeout(() => {
-      // success state
+    try {
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
       submitBtn.textContent = "Message Sent! ✓";
       submitBtn.classList.add("is-success");
+      openFormToast?.();
 
-      // show toast bubble in the form bottom
-      openFormToast();
-
-      // reset
       setTimeout(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         submitBtn.classList.remove("is-success");
         contactForm.reset();
       }, 2500);
-    }, 1500);
+    } catch (err) {
+      console.error(err);
+      submitBtn.textContent = "Try again";
+      submitBtn.disabled = false;
+      // می‌تونی پیام خطای UI اضافه کنی (اختیاری)
+    }
   });
 }
