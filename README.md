@@ -5,7 +5,7 @@ Built as part of my learning journey in **React and modern front-end development
 
 ---
 
-## 🌱 Project Goal
+<!-- ## 🌱 Project Goal
 
 The goal of this project is to practice:
 - Writing clean and readable code
@@ -13,7 +13,7 @@ The goal of this project is to practice:
 - Creating a calm, user-friendly interface
 - Following good front-end structure and habits
 
----
+--- -->
 
 ## ✨ Features
 
