@@ -15,15 +15,15 @@ The goal of this project is to practice:
 
 --- -->
 
-<!-- ## ✨ Features
+## ✨ Features
 
-✅ Clean and minimal UI
-✅ Component-based structure
-✅ Easy-to-read logic
-✅ Responsive layout
+✅ Clean and minimal UI  
+✅ Component-based structure  
+✅ Easy-to-read logic  
+✅ Responsive layout  
 ✅ Focus on user experience
 
---- -->
+---
 
 ## 🧠 Concepts Used
 
