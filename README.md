@@ -17,23 +17,22 @@ The goal of this project is to practice:
 
 <!-- ## ✨ Features
 
-✅ Clean and minimal UI  
-✅ Component-based structure  
-✅ Easy-to-read logic  
-✅ Responsive layout  
-✅ Focus on user experience  
+✅ Clean and minimal UI
+✅ Component-based structure
+✅ Easy-to-read logic
+✅ Responsive layout
+✅ Focus on user experience
 
 --- -->
 
-<!-- ## 🧠 Concepts Used
+## 🧠 Concepts Used
 
-- ⚛️ React Functional Components  
-- 🎯 State management with `useState`  
-- 🧩 Component composition  
-- 🎨 Styling with Tailwind CSS (or CSS)  
-- 📐 Clean layout and spacing  
+- ⚛️ React Functional Components
+- 🎯 State management with `useState`
+- 🧩 Component composition
+- 🎨 Styling with Tailwind CSS (or CSS)
+- 📐 Clean layout and spacing
 
 ---
 
-## 🗂️ Project Structure (Example) -->
-
+## 🗂️ Project Structure (Example)
