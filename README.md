@@ -15,7 +15,7 @@ The goal of this project is to practice:
 
 --- -->
 
-## ✨ Features
+<!-- ## ✨ Features
 
 ✅ Clean and minimal UI  
 ✅ Component-based structure  
@@ -23,9 +23,9 @@ The goal of this project is to practice:
 ✅ Responsive layout  
 ✅ Focus on user experience  
 
----
+--- -->
 
-## 🧠 Concepts Used
+<!-- ## 🧠 Concepts Used
 
 - ⚛️ React Functional Components  
 - 🎯 State management with `useState`  
@@ -35,5 +35,5 @@ The goal of this project is to practice:
 
 ---
 
-## 🗂️ Project Structure (Example)
+## 🗂️ Project Structure (Example) -->
 
